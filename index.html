@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/3e8c3ff6bb.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <title>Rock Paper Scissors</title>
+</head>
+
+<body>
+
+    <div class="game">
+        <div class="header ">
+            <h1>Rock paper Scissors</h1>
+            <div id="time"></div>
+        </div>
+        <div class="main flex">
+            <div class="me main-item">
+                <h2>You</h2>
+                <div class="play-ground">
+                    <img id="my-play-ground" src="./rock-left.png" alt="">
+                </div>
+            </div>
+            <div class="main-item">
+                <h2>Best of Three</h2>
+                <div class="scores">
+                    <div class="rounds">
+                        <h4>ROUND 1: <span id="round-one">....</span> </h4>
+                        <h4>ROUND 2: <span id="round-two">....</span> </h4>
+                        <h4>ROUND 3: <span id="round-three">....</span></h4>
+                    </div>
+                    <div class="score-board">
+                        <h3 id="winner">Welcome to RPS <br> To start the game,</h3>
+                    </div>
+                    <div class="hide end-result">
+                        <div id="game-winner">
+                            <h2 id="game-winner-text">
+                                congratulations <br> You won
+                            </h2>
+                        </div>
+                        <button id="restart-btn">Restart Game</button>
+                    </div>
+                </div>
+            </div>
+            <div class="computer main-item">
+                <h2>computer</h2>
+                <div class="play-ground">
+                    <img id="computers-play-ground" src="./rock-right.png" alt="">
+                </div>
+            </div>
+        </div>
+        <section>
+            <h1>Make a Choice</h1>
+            <div class="choices flex">
+                <div class="rock">
+                    <div class="icon">
+                        <img class="choice" src="rock.png" alt="rock">
+                    </div>
+                </div>
+                <div class="paper">
+                    <div class="icon">
+                        <img class="choice" src="paper.png" alt="paper">
+                    </div>
+                </div>
+                <div class="scissors">
+                    <div class="icon">
+                        <img class="choice" src="scissors.png" alt="scissors">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="footer">
+            <p>@kipchirchiralb</p>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

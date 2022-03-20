@@ -1,0 +1,174 @@
+:root {
+  --primary: #343a40;
+  --winner: #054705;
+  --loser: #cc0000;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+.hide {
+  display: none;
+}
+.game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  background-color: #f7f7f7;
+}
+.header {
+  background-color: var(--primary);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 20px;
+}
+.header * {
+  margin: 0 20px;
+}
+.main {
+  display: flex;
+  width: 90%;
+  margin: 10px auto;
+  color: #343a40;
+  justify-content: space-between;
+  height: 30vh;
+  text-align: center;
+}
+.scores {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid #054705; */
+  justify-content: space-between;
+  gap: 20px;
+}
+.scores .winnner {
+  margin-top: 20px;
+}
+.main-item {
+  width: 30%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.icon {
+  height: 100%;
+  width: 100%;
+}
+.icon img {
+  height: 80%;
+  width: 80%;
+  margin: 0 auto;
+}
+
+section {
+  width: 70%;
+  text-align: center;
+  margin: 0 auto;
+}
+.choices {
+  width: 90%;
+  margin: 10px auto;
+  height: 30vh;
+  display: flex;
+  justify-content: space-between;
+}
+.choices > div {
+  height: 100%;
+  width: 30%;
+}
+.footer {
+  background-color: var(--primary);
+  color: white;
+  width: 100%;
+  text-align: center;
+  margin-top: auto;
+  padding: 30px 0;
+}
+.play-ground {
+  height: 100px;
+}
+#my-play-ground {
+  height: 100%;
+  align-self: flex-end;
+}
+#computers-play-ground {
+  height: 100%;
+}
+.score-board {
+  color: green;
+  font-size: 1.2rem;
+  height: 50px;
+}
+
+.won {
+  background-color: green;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.lost {
+  background-color: #f32d13;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.draw {
+  background-color: #c49e23;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.bounce {
+  animation: bounce 1s linear;
+}
+
+.end-result {
+  height: 150px;
+  background-color: white;
+  color: white;
+}
+.end-result h2 {
+  height: 100px;
+  padding: 5px;
+  line-height: 40px;
+}
+.end-result button {
+  height: 50px;
+  width: 100%;
+  background-color: #1400cc;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: bolder;
+  border: none;
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0px);
+  }
+  20% {
+    transform: translateY(-60px);
+  }
+  40% {
+    transform: translateY(0px);
+  }
+  60% {
+    transform: translateY(-60px);
+  }
+  80% {
+    transform: translateY(0);
+  }
+  90% {
+    transform: translateY(-40px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
