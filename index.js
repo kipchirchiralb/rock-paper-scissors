@@ -1,36 +1,28 @@
-// time update
-function refreshTime() {
-  const timeDisplay = document.getElementById("time");
-  const dateString = new Date().toLocaleString();
-  const formattedString = dateString.replace(", ", " - ");
-  timeDisplay.textContent = formattedString;
-}
-setInterval(refreshTime, 1000);
-
-// the game itself
+// lets get all needed variables
 let winner = document.querySelector("#winner");
 let computerField = document.querySelector("#computers-play-ground");
 let myField = document.querySelector("#my-play-ground");
 let scoresEl = document.querySelector(".rounds");
 let scoreBoardEl = document.querySelector(".score-board");
 let endResult = document.querySelector(".end-result");
+let myChoices = document.querySelectorAll(".choice");
+let restartBtn = document.querySelector("#restart-btn");
 let computerWins = 0;
 let myWins = 0;
 let isGameOn = true;
-
-let choices = ["rock", "paper", "scissors"];
-const computer = () => {
-  return choices[Math.floor(Math.random() * 3)];
-};
-
 let rounds = 0;
 let roundWinner = "";
+let choices = ["rock", "paper", "scissors"];
+const computer = () => choices[Math.floor(Math.random() * 3)];
 
-const myChoices = document.querySelectorAll(".choice");
+// listen for choices made by a player through clicks to start game
 myChoices.forEach((choice) => {
   choice.addEventListener("click", startGame);
 });
+// listen for restart button click
+restartBtn.addEventListener("click", restartGame);
 
+// the functions
 function startGame(e) {
   let myChoice = e.target.getAttribute("alt");
   let computersChoice = computer();
@@ -59,9 +51,6 @@ function startGame(e) {
   setTimeout(updateFields, 1000);
 }
 
-// paper beats rock
-// scissors beats paper
-// rock beats scissors
 function endGame() {
   scoresEl.classList.add("hide");
   scoreBoardEl.classList.add("hide");
@@ -83,9 +72,6 @@ function endGame() {
   }
 }
 
-// restart game - btn
-document.querySelector("#restart-btn").addEventListener("click", restartGame);
-
 function restartGame() {
   isGameOn = false;
   location.reload();
@@ -96,6 +82,9 @@ function fillChoices(mychoice, computer) {
   computerField.setAttribute("src", `${computer}-right.png`);
 }
 
+// paper beats rock
+// scissors beats paper
+// rock beats scissors
 function rockPaperScissors(mychoice, computer) {
   if (mychoice === computer) {
     winner.textContent = "DRAW!";
