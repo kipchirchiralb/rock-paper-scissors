@@ -1,12 +1,12 @@
 // lets get all needed variables
-let winner = document.querySelector("#winner");
-let computerField = document.querySelector("#computers-play-ground");
-let myField = document.querySelector("#my-play-ground");
-let scoresEl = document.querySelector(".rounds");
-let scoreBoardEl = document.querySelector(".score-board");
-let endResult = document.querySelector(".end-result");
-let myChoices = document.querySelectorAll(".choice");
-let restartBtn = document.querySelector("#restart-btn");
+const winner = document.querySelector("#winner");
+const computerField = document.querySelector("#computers-play-ground");
+const myField = document.querySelector("#my-play-ground");
+const scoresEl = document.querySelector(".rounds");
+const scoreBoardEl = document.querySelector(".score-board");
+const endResult = document.querySelector(".end-result");
+const myChoices = document.querySelectorAll(".choice");
+const restartBtn = document.querySelector("#restart-btn");
 let computerWins = 0;
 let myWins = 0;
 let isGameOn = false;
@@ -39,7 +39,6 @@ function startGame(e) {
     rockPaperScissors(myChoice, computersChoice);
     computerField.classList.remove("bounce");
     myField.classList.remove("bounce");
-    console.log(rounds);
     if (rounds === 1) {
       document.querySelector("#round-one").textContent = roundWinner;
     } else if (rounds === 2) {
