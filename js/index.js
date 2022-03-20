@@ -30,8 +30,8 @@ function startGame(e) {
   }
   let myChoice = e.target.getAttribute("alt");
   let computersChoice = computer();
-  myField.setAttribute("src", "rock-left.png");
-  computerField.setAttribute("src", "rock-right.png");
+  myField.setAttribute("src", "./images/rock-left.png");
+  computerField.setAttribute("src", "./images/rock-right.png");
   computerField.classList.add("bounce");
   myField.classList.add("bounce");
 
@@ -79,8 +79,8 @@ function restartGame() {
 }
 
 function fillChoices(mychoice, computer) {
-  myField.setAttribute("src", `${mychoice}-left.png`);
-  computerField.setAttribute("src", `${computer}-right.png`);
+  myField.setAttribute("src", `./images/${mychoice}-left.png`);
+  computerField.setAttribute("src", `./images/${computer}-right.png`);
 }
 
 // paper beats rock
