@@ -27,38 +27,37 @@ let rounds = 0;
 let roundWinner = "";
 
 const myChoices = document.querySelectorAll(".choice");
-myChoices.forEach((mychoice) => {
-  mychoice.addEventListener("click", (e) => {
-    let myChoice = e.target.getAttribute("alt");
-    let computersChoice = computer();
-    myField.setAttribute("src", "rock-left.png");
-    computerField.setAttribute("src", "rock-right.png");
-    computerField.classList.add("bounce");
-    myField.classList.add("bounce");
-    rounds++;
-    function updateFields() {
-      rockPaperScissors(myChoice, computersChoice);
-      computerField.classList.remove("bounce");
-      myField.classList.remove("bounce");
-      console.log(rounds);
-      if (rounds === 1) {
-        document.querySelector("#round-one").textContent = roundWinner;
-      } else if (rounds === 2) {
-        document.querySelector("#round-two").textContent = roundWinner;
-      } else if (rounds === 3) {
-        document.querySelector("#round-three").textContent = roundWinner;
-        setTimeout(endGame, 500);
-        if (isGameOn) {
-          setTimeout(restartGame, 10000);
-        }
+myChoices.forEach((choice) => {
+  choice.addEventListener("click", startGame);
+});
+
+function startGame(e) {
+  let myChoice = e.target.getAttribute("alt");
+  let computersChoice = computer();
+  myField.setAttribute("src", "rock-left.png");
+  computerField.setAttribute("src", "rock-right.png");
+  computerField.classList.add("bounce");
+  myField.classList.add("bounce");
+  rounds++;
+  function updateFields() {
+    rockPaperScissors(myChoice, computersChoice);
+    computerField.classList.remove("bounce");
+    myField.classList.remove("bounce");
+    console.log(rounds);
+    if (rounds === 1) {
+      document.querySelector("#round-one").textContent = roundWinner;
+    } else if (rounds === 2) {
+      document.querySelector("#round-two").textContent = roundWinner;
+    } else if (rounds === 3) {
+      document.querySelector("#round-three").textContent = roundWinner;
+      setTimeout(endGame, 500);
+      if (isGameOn) {
+        setTimeout(restartGame, 10000);
       }
     }
-    // if (rounds > 3) {
-    //   restartGame();
-    // }
-    setTimeout(updateFields, 1000);
-  });
-});
+  }
+  setTimeout(updateFields, 1000);
+}
 
 // paper beats rock
 // scissors beats paper
