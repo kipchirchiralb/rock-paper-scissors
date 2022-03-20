@@ -9,7 +9,7 @@ let myChoices = document.querySelectorAll(".choice");
 let restartBtn = document.querySelector("#restart-btn");
 let computerWins = 0;
 let myWins = 0;
-let isGameOn = true;
+let isGameOn = false;
 let rounds = 0;
 let roundWinner = "";
 let choices = ["rock", "paper", "scissors"];
@@ -24,13 +24,17 @@ restartBtn.addEventListener("click", restartGame);
 
 // the functions
 function startGame(e) {
+  rounds++;
+  if (rounds > 3) {
+    restartGame();
+  }
   let myChoice = e.target.getAttribute("alt");
   let computersChoice = computer();
   myField.setAttribute("src", "rock-left.png");
   computerField.setAttribute("src", "rock-right.png");
   computerField.classList.add("bounce");
   myField.classList.add("bounce");
-  rounds++;
+
   function updateFields() {
     rockPaperScissors(myChoice, computersChoice);
     computerField.classList.remove("bounce");
@@ -43,9 +47,7 @@ function startGame(e) {
     } else if (rounds === 3) {
       document.querySelector("#round-three").textContent = roundWinner;
       setTimeout(endGame, 500);
-      if (isGameOn) {
-        setTimeout(restartGame, 10000);
-      }
+      setTimeout(restartGame, 15000);
     }
   }
   setTimeout(updateFields, 1000);
